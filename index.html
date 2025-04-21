@@ -6,9 +6,9 @@
     <title>LOTINU Staking</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Web3 and Wallet Connection -->
+    <!-- Web3 Dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/web3@1.8.1/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+    <script src="https://unpkg.com/@walletconnect/ethereum-provider@2.9.2/dist/index.umd.js"></script>
     <script src="https://unpkg.com/web3modal@1.9.12/dist/index.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -83,13 +83,8 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
         .connected {
-            animation: pulse 2s infinite;
+            background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
         }
     </style>
 </head>
@@ -155,14 +150,14 @@
         <!-- Staking Interface -->
         <div class="stat-card p-8">
             <div class="flex items-center gap-4 mb-8">
-                <div class="icon-circle bg-blue-400">
+                <div class="icon-circle bg-purple-400">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                     </svg>
                 </div>
                 <div class="flex items-center gap-4">
-                    <h2 class="text-2xl font-semibold">Bone Lock Timer:</h2>
-                    <p class="text-2xl font-bold text-blue-400" id="lockTimer">--</p>
+                    <h2 class="text-2xl font-semibold">Your LOTINU Balance:</h2>
+                    <p class="text-2xl font-bold text-purple-400" id="walletBalance">--</p>
                 </div>
             </div>
 
